@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<div class="page-wrapper">
+
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-front">
+        <div class="container">
+          <img src='img/Ellipse1.jpg'>
+          <div class="name">mr. Abmetka</div>
+          <div class="socials">
+            <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://t.me/tonimorti"><i class="fas fa-envelope"></i></a>
+          </div>    
+        </div>
+      </div>
+      <div class="card-back">
+        <p style="font-size: 12px; font-weight:300px">write to me:</p>
+        <div class="socials">
+          <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-telegram"></i></a>
+          <a href="https://t.me/tonimorti"><i class="fas fa-envelope"></i></a>
+        </div>    
+        <p class="about">Этот парень был из тех, кто очень любит жизнь, особенно когда жизнь приносит пиццу и не задаёт лишних вопросов. Он верил, что если долго игнорировать проблемы с оптимизмом и перекусами, они либо решатся сами, либо тоже начнут его уважать.</p>
+        <p>PS: что по сиге слышно?</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <script>
+    const card = document.querySelector('.card');
+  
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  </script>
+
+</body>
+</html>
