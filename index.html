@@ -41,14 +41,15 @@
 
   <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const cardWrappers = document.querySelectorAll('.card-wrapper');
-
-  cardWrappers.forEach(wrapper => {
-    wrapper.addEventListener('click', function () {
-      const card = wrapper.querySelector('.card');
-      card.classList.toggle('flipped');
+  if (window.matchMedia('(hover: none)').matches) { 
+    const cardWrappers = document.querySelectorAll('.card-wrapper');
+    cardWrappers.forEach(wrapper => {
+      wrapper.addEventListener('click', function () {
+        const card = wrapper.querySelector('.card');
+        card.classList.toggle('flipped');
+      });
     });
-  });
+  }
 });
   </script>
 
