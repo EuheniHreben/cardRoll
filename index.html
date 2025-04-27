@@ -18,40 +18,28 @@
           <img src='img/Ellipse1.jpg'>
           <div class="name">mr. Abmetka</div>
           <div class="socials">
-            <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-telegram"></i></a>
-            <a href="https://t.me/tonimorti"><i class="fas fa-envelope"></i></a>
+            <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-github fa-xl"></i></a>
+            <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-telegram fa-xl"></i></a>
+            <a href="https://t.me/tonimorti" target="_blank"><i class="fas fa-envelope fa-xl"></i></a>
           </div>    
         </div>
       </div>
       <div class="card-back">
-        <p style="font-size: 12px; font-weight:300">write to me:</p>
+        <iframe src="//promodj.com/embed/7736711/cover" width="100%" height="300" style="min-width: 450px; max-width: 900px" frameborder="0" allowfullscreen class="player"></iframe>
         <div class="socials">
           <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://t.me/tonimorti" target="_blank"><i class="fab fa-telegram"></i></a>
-          <a href="https://t.me/tonimorti"><i class="fas fa-envelope"></i></a>
-        </div>    
-        <p class="about">Этот парень был из тех, кто очень любит жизнь, особенно когда жизнь приносит пиццу и не задаёт лишних вопросов. Он верил, что если долго игнорировать проблемы с оптимизмом и перекусами, они либо решатся сами, либо тоже начнут его уважать.</p>
-        <p>PS: что по сиге слышно?</p>
+          <a href="https://t.me/tonimorti" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p id="quote-text"></p>
+        <button id="color-music">Turn on colors</button>
       </div>
     </div>
   </div>
 
 </div>
 
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-  if (window.matchMedia('(hover: none)').matches) { 
-    const cardWrappers = document.querySelectorAll('.card-wrapper');
-    cardWrappers.forEach(wrapper => {
-      wrapper.addEventListener('click', function () {
-        const card = wrapper.querySelector('.card');
-        card.classList.toggle('flipped');
-      });
-    });
-  }
-});
-  </script>
+<script src="main.js"></script>
 
 </body>
 </html>
