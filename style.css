@@ -133,20 +133,15 @@ a {
   color: #ccc;
   line-height: 1.5;
 }
-
+/* 
 @media (max-width: 600px) {
-  .container {
-    padding: 10px;
-    justify-content: center;
-    gap: 20px;
-  }
   .name {
     font-size: 20px;
   }
   .about {
     font-size: 14px;
   }
-}
+} */
 
 @media (hover: hover) and (pointer: fine) {
   .card-wrapper:hover .card {

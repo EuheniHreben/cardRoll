@@ -65,6 +65,7 @@ function getRandomQuote() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const backQuote = document.getElementById('quote-text');
+  backQuote.textContent = getRandomQuote();
   setInterval(() => {
     backQuote.textContent = getRandomQuote();
   }, 29000)
