@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const card = document.querySelector('.card');
+  card.addEventListener('mouseenter', () => {
+    if (card.classList.contains('auto-rotate')) {
+      card.classList.remove('auto-rotate');
+    }
+  });
+});
+
 const colorMusicBtn = document.getElementById('color-music')
 
 colorMusicBtn.addEventListener('click', e => {
@@ -51,7 +60,7 @@ const quotes = [
 
 function getRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  return `"${quotes[randomIndex]}"`;
+  return `"${quotes[randomIndex]}" Будда Шакьямуни`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
