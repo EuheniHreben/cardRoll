@@ -85,3 +85,18 @@ const quotes = [
   "Сомнения разделяют людей, вера соединяет их.",
   "Будь терпелив: всё приходит к тем, кто умеет ждать."
 ];
+
+// const shareData = {
+//   title: 'Abmёtka Production',
+//   url: 'https://euhenihreben.github.io/cardRoll/',
+// }
+
+// const btnUrl = document.querySelector('btnUrl')
+
+// btnUrl.addEventListener('click', async () => {
+//   try {
+//     await navigator.share(shareData)
+//   } catch (err) {
+//     console.log(err)
+//   }
+// })
