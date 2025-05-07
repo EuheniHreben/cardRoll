@@ -7,6 +7,7 @@
 //     const card = wrapper.querySelector('.card');
 //     card.classList.toggle('flipped');
 //   });
+
 //   cardFront.addEventListener('click', function () {
 //     const card = wrapper.querySelector('.card');
 //     card.classList.toggle('flipped');
@@ -40,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+
 
 const colorMusicBtn = document.getElementById('color-music')
 

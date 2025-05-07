@@ -68,9 +68,9 @@ btnSubmit.addEventListener('click', e => {
 
   carMark.textContent = car.mark
   carModel.textContent = car.model
-  carMileage.textContent = `${car.currentMileage} km`
+  carMileage.textContent = `${car.currentMileage.toLocaleString("en-GB")} km`
   car.nextMileage = car.currentMileage + 8000
-  carNextMileage.textContent = `${car.nextMileage} km`
+  carNextMileage.textContent = `${car.nextMileage.toLocaleString("en-GB")} km`
   console.log(car)
 
   // car.currentMileage > car.nextMileage ? 
