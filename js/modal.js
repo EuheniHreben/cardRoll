@@ -1,99 +1,90 @@
-const btnSettings = document.getElementById('settings')
+const btnSettings = document.getElementById("settings");
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close")[0];
 
-const carMark = document.getElementById('cardMark')
-const carModel = document.getElementById('cardModel')
-const carMileage = document.getElementById('cardMileage')
-const carNextMileage = document.getElementById('cardNextMileage')
+const carMark = document.getElementById("carMark");
+const carModel = document.getElementById("carModel");
+const carCurrentMileage = document.getElementById("carCurrentMileage");
+const carOilChange = document.getElementById("carOilChange");
 
-const carMarkInput = document.getElementById('cardMarkInput')
-const carModelInput = document.getElementById('cardModelInput')
-const carMileageInput = document.getElementById('cardMileageInput')
-const carLastMileageInput = document.getElementById('cardLastMileageInput')
-const btnSubmit = document.getElementById('btnSubmit')
-// const body = document.body;
+const carMarkInput = document.getElementById("cardMarkInput");
+const carModelInput = document.getElementById("cardModelInput");
+const carMileageInput = document.getElementById("cardMileageInput");
+const carLastMileageInput = document.getElementById("cardLastMileageInput");
+const btnSubmit = document.getElementById("btnSubmit");
 
-btnSettings.onclick = function(e) {
-  e.stopPropagation()
-  modal.style.display = "flex";  
-  document.body.classList.add('locked');
-}
-span.onclick = function() {
+btnSettings.onclick = function (e) {
+  e.stopPropagation();
+  modal.style.display = "flex";
+  document.body.classList.add("locked");
+};
+span.onclick = function () {
   modal.style.display = "none";
-  document.body.classList.remove('locked');
-}
-window.onclick = function(event) {
+  document.body.classList.remove("locked");
+};
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
-    document.body.classList.remove('locked');
+    document.body.classList.remove("locked");
   }
-}
+};
 
 let car = {
-  mark: 'Hyundai',
-  model: 'Solaris',
-  currentMileage: 0,
-  lastMileage: 0,
-  nextMileage: 0,
+  mark: "Hyundai",
+  model: "Solaris",
+  currentMileage: 140000,
+  oilChange: 142000,
   fuelConsumption: 7.5,
   fuelPrice: 2.6,
   calculateFuel: function (distance) {
-    const fuel = Math.round((distance / 100) * this.fuelConsumption)
-    const price = Math.round(fuel * this.fuelPrice)
-    console.log(`На ${distance} км необходимо ${fuel} л топлива стоимостью ${price} BYN`)
+    const fuel = Math.round((distance / 100) * this.fuelConsumption);
+    const price = Math.round(fuel * this.fuelPrice);
+    console.log(
+      `На ${distance} км необходимо ${fuel} л топлива стоимостью ${price} BYN`
+    );
   },
-  updateMileage: function (newMileage) {
-    if (newMileage > this.currentMileage) {
-      this.currentMileage = newMileage
-      console.log(`Общий пробег изменён на ${newMileage} км`)
-    } else {
-      console.log('Пробег не может быть меньше текущего')
-    }
-    if (this.currentMileage > this.nextMileage) {
-      console.log('Вам необходимо пройти сервисное обслуживание')
-      this.nextMileage += this.oilChange
-    } else {
-      console.log('Сервисного обслуживания не требуется')
-    }
-  }
-}
+};
 
-btnSubmit.addEventListener('click', e => {
-  e.preventDefault()
-
-  // проверка на пустые поля
+btnSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
 
   if (carMarkInput.value?.trim()) {
-    car.mark = carMarkInput.value
+    car.mark = carMarkInput.value;
   }
-
   if (carModelInput.value?.trim()) {
-    car.model = carModelInput.value
+    car.model = carModelInput.value;
   }
-  
   if (carMileageInput.value?.trim() && !isNaN(carMileageInput.value)) {
-    const newMileage = parseInt(carMileageInput.value)
-    car.updateMileage(newMileage)
+    car.currentMileage = Number(carMileageInput.value);
+  }
+  if (carLastMileageInput.value?.trim() && !isNaN(carLastMileageInput.value)) {
+    car.oilChange = Number(carLastMileageInput.value) + 8000;
   }
 
+  console.log(car);
 
-  carMark.textContent = car.mark
-  carModel.textContent = car.model
-  carMileage.textContent = `${car.currentMileage.toLocaleString("en-GB")} km`
-  car.nextMileage = car.currentMileage + 8000
-  carNextMileage.textContent = `${car.nextMileage.toLocaleString("en-GB")} km`
-  console.log(car)
+  carMark.textContent = car.mark;
+  carModel.textContent = car.model;
+  carCurrentMileage.textContent = `${car.currentMileage.toLocaleString(
+    "en-GB"
+  )} km`;
+  carOilChange.textContent = `${car.oilChange.toLocaleString("en-GB")} km`;
 
-  // car.currentMileage > car.nextMileage ? 
-  // можно сделать градиент от обычного => жёлтый => красный
-  // привести все названия переменных к единому стандарту
-  
-  carMarkInput.value = ''
-  carModelInput.value = ''
-  carMileageInput.value = ''
-  carLastMileageInput.value = ''
+  if (car.oilChange - car.currentMileage <= 2000) {
+    carCurrentMileage.style.color = "#C2A85C";
+  }
+  if (car.currentMileage > car.oilChange) {
+    carCurrentMileage.style.color = "#A44A4A";
+  }
+  if (car.oilChange - car.currentMileage > 2000) {
+    carCurrentMileage.style.color = "inherit";
+  }
+
+  carMarkInput.value = "";
+  carModelInput.value = "";
+  carMileageInput.value = "";
+  carLastMileageInput.value = "";
 
   modal.style.display = "none";
-  body.classList.remove('locked');
-})
+  body.classList.remove("locked");
+});

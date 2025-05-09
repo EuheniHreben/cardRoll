@@ -1,4 +1,4 @@
-@import url('modal.css');
+@import url("modal.css");
 
 body {
   margin: 0;
@@ -40,7 +40,7 @@ a {
   background-image: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
   background-size: 2800% 2800%;
   animation: driftGradient 30s ease-in-out infinite;
-} 
+}
 
 .page-wrapper {
   display: flex;
@@ -59,11 +59,11 @@ a {
 .card {
   position: relative;
   cursor: pointer;
-  border-radius: 24px;  
+  border-radius: 24px;
   width: 100%;
   min-height: 450px;
   transform-style: preserve-3d;
-  box-shadow: 0 2px 50px rgba(0,0,0,0.8);
+  box-shadow: 0 2px 50px rgba(0, 0, 0, 0.8);
   transform: rotateY(0deg);
   transition: transform 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
 }
@@ -79,7 +79,7 @@ a {
 
 .card:hover {
   transform: rotateY(180deg);
-  animation: none; 
+  animation: none;
 }
 
 .card-front,
@@ -89,14 +89,14 @@ a {
   border-radius: 24px;
   border: 1px solid transparent;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   background: #333;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  animation:  cardBlink 3.2s ease;
+  animation: cardBlink 3.2s ease;
 }
 
 .card-front {
@@ -113,7 +113,7 @@ a {
 
 .container {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -139,7 +139,7 @@ a {
 }
 
 .img {
-  animation: popUp 2s forwards; 
+  animation: popUp 2s forwards;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -148,7 +148,7 @@ a {
   }
   .card.flipped {
     transform: rotateY(180deg);
-    box-shadow: 0px 0px 15px #FFC300;
+    box-shadow: 0px 0px 15px #ffc300;
   }
   .socials a:hover {
     color: #007bff;
@@ -189,9 +189,15 @@ a {
   animation: popUp 0.6s forwards;
 }
 
-.socials a:nth-child(1) { animation-delay: 1.4s; }
-.socials a:nth-child(2) { animation-delay: 1.6s; }
-.socials a:nth-child(3) { animation-delay: 1.8s; }
+.socials a:nth-child(1) {
+  animation-delay: 1.4s;
+}
+.socials a:nth-child(2) {
+  animation-delay: 1.6s;
+}
+.socials a:nth-child(3) {
+  animation-delay: 1.8s;
+}
 
 #quote-text {
   color: #ccc;
@@ -207,7 +213,7 @@ a {
 }
 
 .player {
-  transform: scale(.8);
+  transform: scale(0.8);
   border: 1px solid transparent;
   margin-top: -80px;
 }
@@ -307,12 +313,12 @@ a {
 
 @keyframes nameBlink {
   0% {
-    text-shadow: 0px 0px 20px #FFC300;
-    color: #FFC300;
+    text-shadow: 0px 0px 20px #ffc300;
+    color: #ffc300;
   }
   50% {
-    text-shadow: 1px 1px 12px #FFC300;
-    color: #FFC300;
+    text-shadow: 1px 1px 12px #ffc300;
+    color: #ffc300;
   }
   100% {
     text-shadow: 0px 0px 0px #111;
@@ -322,10 +328,10 @@ a {
 
 @keyframes cardBlink {
   0% {
-    box-shadow: 0px 0px 50px #FFC300;
+    box-shadow: 0px 0px 50px #ffc300;
   }
   50% {
-    box-shadow: 1px 1px 22px #FFC300;
+    box-shadow: 1px 1px 22px #ffc300;
   }
   100% {
     box-shadow: 0px 0px 0px #111;
@@ -335,11 +341,11 @@ a {
 @keyframes animatetop {
   from {
     top: -300px;
-    opacity: 0
+    opacity: 0;
   }
 
   to {
     top: 0;
-    opacity: 1
+    opacity: 1;
   }
 }
