@@ -22,7 +22,7 @@
                 <img src="img/Ellipse1.jpg" class="img" alt="myAvatar" />
               </div>
               <div class="car">
-                <h1 class="car__UserName">mr. Abmёtka</h1>
+                <h1 id="carUserName" class="car__username">mr. Abmёtka</h1>
                 <ul class="car__list">
                   <li class="car__item">
                     <a href="#" class="car__desc">mark: </a
@@ -35,13 +35,13 @@
                   <li class="car__item">
                     <a href="#" class="car__desc">mileage: </a
                     ><a href="#" class="car__person" id="carCurrentMileage"
-                      >140,000 km</a
+                      >140 000 km</a
                     >
                   </li>
                   <li class="car__item">
                     <a href="#" class="car__desc">oil change: </a
                     ><a href="#" class="car__person" id="carOilChange"
-                      >150,000 km</a
+                      >150 000 km</a
                     >
                   </li>
                 </ul>
@@ -81,6 +81,7 @@
             <div id="modal-info"></div>
           </div>
           <div class="modal-body">
+            <input id="cardUserInput" type="text" placeholder="имя пользователя" />
             <input id="cardMarkInput" type="text" placeholder="марка" />
             <input id="cardModelInput" type="text" placeholder="модель" />
             <input

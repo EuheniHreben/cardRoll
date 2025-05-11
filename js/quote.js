@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   backQuote.textContent = getRandomQuote();
   setInterval(() => {
     backQuote.textContent = getRandomQuote();
-  }, 59000);
+  }, 29000);
 });
 
 const quotes = [
