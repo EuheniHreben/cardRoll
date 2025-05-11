@@ -1,78 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4285f4" />
+    <title>Welcome</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#4285f4">
-  <title>myCarInfo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-  <div class="page-wrapper">
-
-    <div class="card-wrapper">
-      <div class="card">
-        <div class="card-front">
-          <div class="container">
-            <div class="img-box"><img src='img/Ellipse1.jpg' class="img" alt="myAvatar"></div>
-            <div class="car">
-              <h1 class="car__UserName">mr. Abmёtka</h1>
-              <ul class="car__list">
-                <li class="car__item"><a href="#" class="car__desc">mark: </a><a href="#" class="car__person"
-                    id="carMark">Hyundai</a></li>
-                <li class="car__item"><a href="#" class="car__desc">model: </a><a href="#" class="car__person"
-                    id="carModel">Solaris</a></li>
-                <li class="car__item"><a href="#" class="car__desc">mileage: </a><a href="#" class="car__person"
-                    id="carCurrentMileage">140,000 km</a></li>
-                <li class="car__item"><a href="#" class="car__desc">oil change: </a><a href="#" class="car__person"
-                    id="carOilChange">150,000 km</a></li>
-              </ul>
+  <body>
+    <div class="page-wrapper">
+      <div class="card-wrapper">
+        <div class="card">
+          <div class="card-front">
+            <div class="container">
+              <div class="img-box">
+                <img src="img/Ellipse1.jpg" class="img" alt="myAvatar" />
+              </div>
+              <div class="car">
+                <h1 class="car__UserName">mr. Abmёtka</h1>
+                <ul class="car__list">
+                  <li class="car__item">
+                    <a href="#" class="car__desc">mark: </a
+                    ><a href="#" class="car__person" id="carMark">Hyundai</a>
+                  </li>
+                  <li class="car__item">
+                    <a href="#" class="car__desc">model: </a
+                    ><a href="#" class="car__person" id="carModel">Solaris</a>
+                  </li>
+                  <li class="car__item">
+                    <a href="#" class="car__desc">mileage: </a
+                    ><a href="#" class="car__person" id="carCurrentMileage"
+                      >140,000 km</a
+                    >
+                  </li>
+                  <li class="car__item">
+                    <a href="#" class="car__desc">oil change: </a
+                    ><a href="#" class="car__person" id="carOilChange"
+                      >150,000 km</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card-back">
-          <iframe class="player" src="//promodj.com/embed/7736711/cover" height="280"
-            style="min-width: 450px; max-width: 900px" allowfullscreen></iframe>
-          <div class="socials">
-            <a href="#" title="Добавить информацию" id="settings"><i class="fa-solid fa-sliders fa-xl"></i></a>
-            <a href="#" title="Расчёт расхода топлива"><i class="fa-solid fa-calculator fa-xl"></i></a>
-            <a href="#" title="Поделиться" id="btnUrl"><i class="fa-solid fa-share-nodes fa-xl"></i></a>
+          <div class="card-back">
+            <iframe
+              class="player"
+              src="//promodj.com/embed/7736711/cover"
+              height="280"
+              style="min-width: 450px; max-width: 900px"
+              allowfullscreen
+            ></iframe>
+            <div class="socials">
+              <a href="#" title="Добавить информацию" id="settings"
+                ><i class="fa-solid fa-sliders fa-xl"></i
+              ></a>
+              <a href="#" title="Расчёт расхода топлива"
+                ><i class="fa-solid fa-calculator fa-xl"></i
+              ></a>
+              <a href="#" title="Поделиться" id="btnUrl"
+                ><i class="fa-solid fa-share-nodes fa-xl"></i
+              ></a>
+            </div>
+            <p id="quote-text"></p>
+            <a href="#" id="color-music" class="button">Turn On backlight</a>
           </div>
-          <p id="quote-text"></p>
-          <a href="#" id="color-music" class="button">Turn On backlight</a>
+        </div>
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 class="modal__title">Профиль пользователя:</h2>
+            <div id="modal-info"></div>
+          </div>
+          <div class="modal-body">
+            <input id="cardMarkInput" type="text" placeholder="марка" />
+            <input id="cardModelInput" type="text" placeholder="модель" />
+            <input
+              id="cardMileageInput"
+              type="number"
+              placeholder="пробег, км"
+            />
+            <input
+              id="cardLastMileageInput"
+              type="number"
+              placeholder="последняя замена масла, км"
+            />
+          </div>
+          <div class="modal-footer">
+            <a href="#" id="btnSubmit" class="button">Подтвердить</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2 class="modal__title">Профиль пользователя:</h2>
-          <div id="modal-info"></div>
-        </div>
-        <div class="modal-body">
-          <input id="cardMarkInput" type="text" placeholder="марка">
-          <input id="cardModelInput" type="text" placeholder="модель">
-          <input id="cardMileageInput" type="number" placeholder="пробег, км">
-          <input id="cardLastMileageInput" type="number" placeholder="последняя замена масла, км">
-        </div>
-        <div class="modal-footer">
-          <a href="#" id="btnSubmit" class="button">Подтвердить</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="js/rotate.js"></script>
-  <script src="js/modal.js"></script>
-  <script src="js/quote.js"></script>
-
-</body>
-
+    <script src="js/rotate.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/backlight.js"></script>
+  </body>
 </html>

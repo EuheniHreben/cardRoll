@@ -73,7 +73,7 @@ btnSubmit.addEventListener("click", (e) => {
   if (car.oilChange - car.currentMileage <= 2000) {
     carCurrentMileage.style.color = "#C2A85C";
   }
-  if (car.currentMileage > car.oilChange) {
+  if (car.currentMileage >= car.oilChange) {
     carCurrentMileage.style.color = "#A44A4A";
   }
   if (car.oilChange - car.currentMileage > 2000) {
