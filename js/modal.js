@@ -34,11 +34,17 @@ let car = {
 
 window.addEventListener("DOMContentLoaded", () => {
   const savedCar = JSON.parse(localStorage.getItem("car"));
-  car = savedCar;
-  carRender();
+  if (savedCar) {
+    car = savedCar;
+    carRender();
+  } else {
+    carRender();
+  }
 });
 
 function carRender() {
+  if (!car) return;
+
   carUserName.textContent = car.user;
   carMark.textContent = car.mark;
   carModel.textContent = car.model;
