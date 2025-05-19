@@ -1,9 +1,9 @@
 const shareData = {
-  title: "Abmёtka Production Company",
+  title: "Abmёtka Production Company:",
   url: "https://euhenihreben.github.io/cardRoll/",
 };
 
-const btnUrl = document.getElementById("btnUrl");
+const btnUrl = document.getElementById("btn-url");
 
 btnUrl.addEventListener("click", async (e) => {
   e.stopPropagation();

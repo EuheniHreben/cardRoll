@@ -1,5 +1,5 @@
 const btnSettings = document.getElementById("settings");
-const modal = document.getElementById("myModal");
+const modalProfile = document.getElementById("myProfile");
 const span = document.getElementsByClassName("close")[0];
 
 const carUserName = document.getElementById("carUserName");
@@ -66,19 +66,19 @@ function carRender() {
 
 btnSettings.onclick = function (e) {
   e.stopPropagation();
-  modal.style.display = "flex";
+  modalProfile.style.display = "flex";
   document.body.classList.add("locked");
 };
 span.onclick = function () {
-  modal.style.display = "none";
+  modalProfile.style.display = "none";
   document.body.classList.remove("locked");
 };
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+window.addEventListener("click", function (e) {
+  if (e.target == modalProfile) {
+    modalProfile.style.display = "none";
     document.body.classList.remove("locked");
   }
-};
+});
 
 function stringToUpperCase(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -112,6 +112,6 @@ btnSubmit.addEventListener("click", (e) => {
   carMileageInput.value = "";
   carLastMileageInput.value = "";
 
-  modal.style.display = "none";
+  modalProfile.style.display = "none";
   document.body.classList.remove("locked");
 });

@@ -60,25 +60,24 @@
               <a href="#" title="Добавить информацию" id="settings"
                 ><i class="fa-solid fa-sliders fa-xl"></i
               ></a>
-              <a href="#" title="Расчёт расхода топлива"
+              <a href="#" title="Расчёт расхода топлива" id="fuel-counter"
                 ><i class="fa-solid fa-calculator fa-xl"></i
               ></a>
-              <a href="#" title="Поделиться" id="btnUrl"
+              <a href="#" title="Поделиться" id="btn-url"
                 ><i class="fa-solid fa-share-nodes fa-xl"></i
               ></a>
             </div>
             <p id="quote-text"></p>
-            <a href="#" id="color-music" class="button">Turn On backlight</a>
+            <button id="color-music" class="button">Turn On backlight</button>
           </div>
         </div>
       </div>
 
-      <div id="myModal" class="modal">
+      <div id="myProfile" class="modal">
         <div class="modal-content">
           <div class="modal-header">
             <span class="close">&times;</span>
             <h2 class="modal__title">Профиль пользователя:</h2>
-            <div id="modal-info"></div>
           </div>
           <div class="modal-body">
             <input
@@ -100,7 +99,27 @@
             />
           </div>
           <div class="modal-footer">
-            <a href="#" id="btnSubmit" class="button">Подтвердить</a>
+            <button id="btnSubmit" class="button">Подтвердить</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="myFuel" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="fuelModalClose close">&times;</span>
+            <h2 class="modal__title">Расчёт расхода топлива:</h2>
+            <div id="resultInfo" class="modal__info"></div>
+          </div>
+          <div class="modal-body">
+            <input
+              id="distanceInput"
+              type="number"
+              placeholder="дистанция, км"
+            />
+          </div>
+          <div class="modal-footer">
+            <button id="btnCount" class="button">Рассчитать</button>
           </div>
         </div>
       </div>
@@ -108,6 +127,7 @@
 
     <script src="js/rotate.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/fuel.js"></script>
     <script src="js/quote.js"></script>
     <script src="js/share.js"></script>
     <script src="js/backlight.js"></script>
