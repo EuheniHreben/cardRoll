@@ -343,7 +343,7 @@ a {
   }
 }
 
-@keyframes animatetop {
+@keyframes animateOpen {
   from {
     top: -300px;
     opacity: 0;
@@ -352,6 +352,18 @@ a {
   to {
     top: 0;
     opacity: 1;
+  }
+}
+
+@keyframes animateClose {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  
+  to {
+    top: -300px;
+    opacity: 0;
   }
 }
 
@@ -378,10 +390,17 @@ a {
   width: 400px;
   max-width: 90%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
+  -webkit-animation-name: animateOpen;
   -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
+  animation-name: animateOpen;
   animation-duration: 0.4s;
+}
+
+.hide {
+  -webkit-animation-name: animateClose;
+  -webkit-animation-duration: 0.3s;
+  animation-name: animateClose;
+  animation-duration: 0.3s;
 }
 
 .close {

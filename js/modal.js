@@ -1,6 +1,7 @@
 const btnSettings = document.getElementById("settings");
 const modalProfile = document.getElementById("myProfile");
 const span = document.getElementsByClassName("close")[0];
+const modalContent = document.querySelector(".modal-content--profile");
 
 const carUserName = document.getElementById("carUserName");
 const carMark = document.getElementById("carMark");
@@ -67,16 +68,25 @@ function carRender() {
 btnSettings.onclick = function (e) {
   e.stopPropagation();
   modalProfile.style.display = "flex";
+  modalContent.classList.remove("hide");
   document.body.classList.add("locked");
 };
+
 span.onclick = function () {
-  modalProfile.style.display = "none";
-  document.body.classList.remove("locked");
-};
-window.addEventListener("click", function (e) {
-  if (e.target == modalProfile) {
+  modalContent.classList.add("hide");
+  setTimeout(() => {
     modalProfile.style.display = "none";
     document.body.classList.remove("locked");
+  }, 200);
+};
+
+window.addEventListener("click", function (e) {
+  if (e.target == modalProfile) {
+    modalContent.classList.add("hide");
+    setTimeout(() => {
+      modalProfile.style.display = "none";
+      document.body.classList.remove("locked");
+    }, 200);
   }
 });
 

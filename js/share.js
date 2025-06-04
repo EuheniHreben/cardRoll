@@ -1,5 +1,5 @@
 const shareData = {
-  title: "Abmёtka Production Company:",
+  title: "Карточка-отслеживатель пробега и не только:",
   url: "https://euhenihreben.github.io/cardRoll/",
 };
 
