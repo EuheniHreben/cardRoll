@@ -125,3 +125,25 @@ btnSubmit.addEventListener("click", (e) => {
   modalProfile.style.display = "none";
   document.body.classList.remove("locked");
 });
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    if (modalProfile.style.display === "flex") {
+      modalContent.classList.add("hide");
+      setTimeout(() => {
+        modalProfile.style.display = "none";
+        document.body.classList.remove("locked");
+      }, 200);
+    }
+
+    const modalFuel = document.getElementById("myFuel");
+    const fuelContent = document.querySelector(".modal-content--fuel");
+    if (modalFuel.style.display === "flex") {
+      fuelContent.classList.add("hide");
+      setTimeout(() => {
+        modalFuel.style.display = "none";
+        document.body.classList.remove("locked");
+      }, 200);
+    }
+  }
+});
